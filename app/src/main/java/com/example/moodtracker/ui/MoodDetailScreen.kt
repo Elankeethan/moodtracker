@@ -47,8 +47,6 @@ import androidx.navigation.NavController
 import com.example.moodtracker.data.MoodEntry
 import com.example.moodtracker.ui.viewmodel.MoodViewModel
 
-// REMOVED ALL COLOR VARIABLES - They are already defined in MainScreen.kt
-
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun MoodDetailScreen(
@@ -86,21 +84,21 @@ fun MoodDetailScreen(
                     }
                 },
                 colors = TopAppBarDefaults.topAppBarColors(
-                    containerColor = Color(0xFF009688), // Same as MainScreen - TEAL
+                    containerColor = Color(0xFF2196F3), // Blue
                     titleContentColor = Color.White
                 ),
                 modifier = Modifier.shadow(
-                    elevation = 16.dp, // Same as MainScreen
+                    elevation = 16.dp,
                     shape = RoundedCornerShape(bottomStart = 16.dp, bottomEnd = 16.dp)
                 )
             )
         },
-        containerColor = Color.Transparent // Same as MainScreen
+        containerColor = Color.Transparent
     ) { innerPadding ->
         Box(
             modifier = Modifier
                 .fillMaxSize()
-                .background(SurfaceGradient) // Using SurfaceGradient from MainScreen.kt
+                .background(SurfaceGradient)
         ) {
             if (selectedMoodEntry != null) {
                 Column(
@@ -109,12 +107,12 @@ fun MoodDetailScreen(
                         .padding(innerPadding)
                         .padding(16.dp)
                 ) {
-                    // Current mood display card - CHANGED TO MINT GREEN
+                    // Current mood display card
                     Card(
                         modifier = Modifier
                             .fillMaxWidth()
                             .shadow(4.dp, RoundedCornerShape(16.dp)),
-                        colors = CardDefaults.cardColors(containerColor = Color(0xFFC8E6C9)), // Light mint green
+                        colors = CardDefaults.cardColors(containerColor = Color(0xFFE3F2FD)), // Light blue
                         shape = RoundedCornerShape(16.dp)
                     ) {
                         Column(
@@ -158,12 +156,12 @@ fun MoodDetailScreen(
 
                     Spacer(modifier = Modifier.height(24.dp))
 
-                    // Mood selector for changing mood - CHANGED TO MINT GREEN
+                    // Mood selector for changing mood
                     Card(
                         modifier = Modifier
                             .fillMaxWidth()
                             .shadow(4.dp, RoundedCornerShape(20.dp)),
-                        colors = CardDefaults.cardColors(containerColor = Color(0xFFC8E6C9)), // Light mint green
+                        colors = CardDefaults.cardColors(containerColor = Color(0xFFE3F2FD)), // Light blue
                         shape = RoundedCornerShape(20.dp)
                     ) {
                         Column(
@@ -196,12 +194,12 @@ fun MoodDetailScreen(
 
                     Spacer(modifier = Modifier.height(24.dp))
 
-                    // Note section - CHANGED TO MINT GREEN
+                    // Note section
                     Card(
                         modifier = Modifier
                             .fillMaxWidth()
                             .shadow(4.dp, RoundedCornerShape(20.dp)),
-                        colors = CardDefaults.cardColors(containerColor = Color(0xFFC8E6C9)), // Light mint green
+                        colors = CardDefaults.cardColors(containerColor = Color(0xFFE3F2FD)), // Light blue
                         shape = RoundedCornerShape(20.dp)
                     ) {
                         Column(
@@ -240,7 +238,7 @@ fun MoodDetailScreen(
 
                     Spacer(modifier = Modifier.height(32.dp))
 
-                    // Save button - CHANGED TO GREEN
+                    // Save button
                     Button(
                         onClick = {
                             val updatedEntry = selectedMoodEntry.copy(
@@ -253,10 +251,10 @@ fun MoodDetailScreen(
                         modifier = Modifier
                             .fillMaxWidth()
                             .height(56.dp)
-                            .shadow(8.dp, RoundedCornerShape(12.dp)), // Same elevation as MainScreen FAB
+                            .shadow(8.dp, RoundedCornerShape(12.dp)),
                         shape = RoundedCornerShape(12.dp),
                         colors = androidx.compose.material3.ButtonDefaults.buttonColors(
-                            containerColor = Color(0xFF8BC34A) // Same green as MainScreen FAB
+                            containerColor = Color(0xFF2196F3) // Blue
                         )
                     ) {
                         Icon(Icons.Filled.Save, contentDescription = "Save", modifier = Modifier.size(20.dp))
@@ -269,7 +267,7 @@ fun MoodDetailScreen(
                     }
                 }
             } else {
-                // Empty state - CHANGED TO MINT GREEN
+                // Empty state
                 Column(
                     modifier = Modifier
                         .fillMaxSize()
@@ -282,7 +280,7 @@ fun MoodDetailScreen(
                         modifier = Modifier
                             .fillMaxWidth()
                             .shadow(4.dp, RoundedCornerShape(20.dp)),
-                        colors = CardDefaults.cardColors(containerColor = Color(0xFFC8E6C9)), // Light mint green
+                        colors = CardDefaults.cardColors(containerColor = Color(0xFFE3F2FD)), // Light blue
                         shape = RoundedCornerShape(20.dp)
                     ) {
                         Box(
@@ -312,10 +310,10 @@ fun MoodDetailScreen(
                                     onClick = { navController.popBackStack() },
                                     modifier = Modifier
                                         .fillMaxWidth(0.6f)
-                                        .shadow(8.dp, RoundedCornerShape(12.dp)), // Same elevation
+                                        .shadow(8.dp, RoundedCornerShape(12.dp)),
                                     shape = RoundedCornerShape(12.dp),
                                     colors = androidx.compose.material3.ButtonDefaults.buttonColors(
-                                        containerColor = Color(0xFF8BC34A) // Same green
+                                        containerColor = Color(0xFF2196F3) // Blue
                                     )
                                 ) {
                                     Text("← Go Back")

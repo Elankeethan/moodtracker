@@ -73,16 +73,16 @@ fun WeeklyReportScreen(
                     }
                 },
                 colors = TopAppBarDefaults.topAppBarColors(
-                    containerColor = Color(0xFF009688), // Changed to teal to match MainScreen
+                    containerColor = Color(0xFF2196F3), // Blue
                     titleContentColor = Color.White
                 ),
                 modifier = Modifier.shadow(
-                    elevation = 16.dp, // Increased to match MainScreen
+                    elevation = 16.dp,
                     shape = RoundedCornerShape(bottomStart = 16.dp, bottomEnd = 16.dp)
                 )
             )
         },
-        containerColor = Color.Transparent // Added to match MainScreen
+        containerColor = Color.Transparent
     ) { innerPadding ->
         Box(
             modifier = Modifier
@@ -102,7 +102,7 @@ fun WeeklyReportScreen(
                             .fillMaxWidth()
                             .height(380.dp)
                             .shadow(4.dp, RoundedCornerShape(20.dp)),
-                        colors = CardDefaults.cardColors(containerColor = Color(0xFFC8E6C9)), // Changed to light mint green
+                        colors = CardDefaults.cardColors(containerColor = Color(0xFFE3F2FD)), // Light blue
                         shape = RoundedCornerShape(20.dp)
                     ) {
                         Column(
@@ -129,7 +129,7 @@ fun WeeklyReportScreen(
                         modifier = Modifier
                             .fillMaxWidth()
                             .shadow(4.dp, RoundedCornerShape(20.dp)),
-                        colors = CardDefaults.cardColors(containerColor = Color(0xFFC8E6C9)), // Changed to light mint green
+                        colors = CardDefaults.cardColors(containerColor = Color(0xFFE3F2FD)), // Light blue
                         shape = RoundedCornerShape(20.dp)
                     ) {
                         Column(
@@ -166,7 +166,7 @@ fun WeeklyReportScreen(
                         modifier = Modifier
                             .fillMaxWidth()
                             .shadow(4.dp, RoundedCornerShape(20.dp)),
-                        colors = CardDefaults.cardColors(containerColor = Color(0xFFC8E6C9)), // Changed to light mint green
+                        colors = CardDefaults.cardColors(containerColor = Color(0xFFE3F2FD)), // Light blue
                         shape = RoundedCornerShape(20.dp)
                     ) {
                         Box(
@@ -225,14 +225,14 @@ fun MoodBarChart(data: Map<String, Int>, viewModel: MoodViewModel) {
         .steps(barData.size - 1)
         .startDrawPadding(30.dp)
         .labelData { index -> barData[index].label }
-        .axisLineColor(Color(0xFF009688)) // Changed to teal
+        .axisLineColor(Color(0xFF2196F3)) // Blue
         .axisLabelColor(Color(0xFF4A5568))
         .build()
 
     val yAxisData = AxisData.Builder()
         .steps(maxCount)
         .labelAndAxisLinePadding(25.dp)
-        .axisLineColor(Color(0xFF009688)) // Changed to teal
+        .axisLineColor(Color(0xFF2196F3)) // Blue
         .axisLabelColor(Color(0xFF4A5568))
         .labelData { index ->
             if (maxCount > 0) (index * (maxCount.coerceAtLeast(1) / maxCount.coerceAtLeast(1))).toString()
@@ -311,14 +311,14 @@ fun MoodStatItem(mood: String, count: Int, color: Color) {
                 modifier = Modifier
                     .size(36.dp)
                     .clip(CircleShape)
-                    .background(Color(0xFF8BC34A).copy(alpha = 0.1f)), // Changed to green
+                    .background(Color(0xFF2196F3).copy(alpha = 0.1f)), // Blue
                 contentAlignment = Alignment.Center
             ) {
                 Text(
                     text = count.toString(),
                     style = MaterialTheme.typography.bodyMedium,
                     fontWeight = FontWeight.Bold,
-                    color = Color(0xFF8BC34A) // Changed to green
+                    color = Color(0xFF2196F3) // Blue
                 )
             }
         }

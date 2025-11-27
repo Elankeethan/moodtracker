@@ -35,13 +35,13 @@ fun MainScreen(
     navController: NavController,
     moodEntries: List<MoodEntry>
 ) {
-    // Custom color scheme
+    // Custom color scheme - BLUE VERSION
     val colorScheme = lightColorScheme(
-        primary = Color(0xFF009688),
+        primary = Color(0xFF2196F3), // Blue
         onPrimary = Color.White,
         surface = Color(0xFFF5F7FA),
-        onSurface = Color(0xFF8BC34A),
-        surfaceVariant = Color(0xFFC8E6C9), // Changed to light mint green
+        onSurface = Color(0xFF2196F3), // Blue
+        surfaceVariant = Color(0xFFE3F2FD), // Light blue
         onSurfaceVariant = Color(0xFF4A5568)
     )
 
@@ -57,7 +57,7 @@ fun MainScreen(
                         )
                     },
                     colors = TopAppBarDefaults.topAppBarColors(
-                        containerColor = Color(0xFF009688),
+                        containerColor = Color(0xFF2196F3), // Blue
                         titleContentColor = Color.White
                     ),
                     modifier = Modifier.shadow(
@@ -69,7 +69,7 @@ fun MainScreen(
             floatingActionButton = {
                 FloatingActionButton(
                     onClick = { navController.navigate("weeklyReport") },
-                    containerColor = Color(0xFF8BC34A),
+                    containerColor = Color(0xFF2196F3), // Blue
                     modifier = Modifier
                         .shadow(8.dp, CircleShape)
                         .size(60.dp)
@@ -103,7 +103,7 @@ fun MainScreen(
                             .fillMaxWidth()
                             .padding(horizontal = 8.dp)
                             .shadow(4.dp, RoundedCornerShape(16.dp)),
-                        colors = CardDefaults.cardColors(containerColor = Color(0xFFC8E6C9)), // Changed to light mint green
+                        colors = CardDefaults.cardColors(containerColor = Color(0xFFE3F2FD)), // Light blue
                         shape = RoundedCornerShape(16.dp)
                     ) {
                         Column(
@@ -112,7 +112,7 @@ fun MainScreen(
                                 .padding(16.dp)
                         ) {
                             Text(
-                                text = "Welcome Daily Mood Tracker! 👋",
+                                text = "Welcome Back! 👋",
                                 style = MaterialTheme.typography.titleLarge,
                                 fontWeight = FontWeight.Bold,
                                 color = Color(0xFF2D3748)
@@ -137,7 +137,7 @@ fun MainScreen(
                         modifier = Modifier
                             .fillMaxSize()
                             .shadow(4.dp, RoundedCornerShape(24.dp)),
-                        colors = CardDefaults.cardColors(containerColor = Color(0xFFC8E6C9)), // Changed to light mint green
+                        colors = CardDefaults.cardColors(containerColor = Color(0xFFE3F2FD)), // Light blue
                         shape = RoundedCornerShape(24.dp)
                     ) {
                         Column(
@@ -179,7 +179,7 @@ fun MoodSelector(viewModel: MoodViewModel) {
         modifier = Modifier
             .fillMaxWidth()
             .shadow(4.dp, RoundedCornerShape(20.dp)),
-        colors = CardDefaults.cardColors(containerColor = Color(0xFFC8E6C9)), // Changed to light mint green
+        colors = CardDefaults.cardColors(containerColor = Color(0xFFE3F2FD)), // Light blue
         shape = RoundedCornerShape(20.dp)
     ) {
         Column(
@@ -310,7 +310,7 @@ fun MoodEntryItem(entry: MoodEntry, onDelete: () -> Unit, onClick: () -> Unit, m
             .fillMaxWidth()
             .shadow(2.dp, RoundedCornerShape(16.dp)),
         shape = RoundedCornerShape(16.dp),
-        colors = CardDefaults.cardColors(containerColor = Color(0xFFC8E6C9)) // Changed to light mint green
+        colors = CardDefaults.cardColors(containerColor = Color(0xFFE3F2FD)) // Light blue
     ) {
         Row(
             modifier = Modifier
@@ -367,7 +367,7 @@ fun MoodEntryItem(entry: MoodEntry, onDelete: () -> Unit, onClick: () -> Unit, m
     }
 }
 
-// Custom Color Palette
+// Custom Color Palette - BLUE VERSION
 val Purple80 = Color(0xFFD0BCFF)
 val PurpleGrey80 = Color(0xFFCCC2DC)
 val Pink80 = Color(0xFFEFB8C8)
